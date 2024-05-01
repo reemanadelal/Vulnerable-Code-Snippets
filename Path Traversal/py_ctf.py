@@ -75,7 +75,7 @@ def article():
         page = 'notallowed.txt'
 
     try:
-        template = open('/home/golem/articles/{}'.format(page)).read()
+        template = open(werkzeug.utils.secure_filename('/home/golem/articles/{}'.format(page)).read())
     except Exception as e:
         template = e
 
